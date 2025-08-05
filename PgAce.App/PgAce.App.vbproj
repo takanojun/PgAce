@@ -12,7 +12,4 @@
     <PackageReference Include="DockPanelSuite" Version="3.0.4" />
     <PackageReference Include="ScintillaNET" Version="2.6.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="My Project\AssemblyInfo.vb" />
-  </ItemGroup>
 </Project>
