@@ -3,12 +3,12 @@
     <TargetFramework>net472</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PgAce.App</RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>PgAce</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Npgsql" Version="4.1.0" />
+    <PackageReference Include="Npgsql" Version="6.0.8" />
     <PackageReference Include="DockPanelSuite" Version="3.0.4" />
     <PackageReference Include="ScintillaNET" Version="2.6.0" />
   </ItemGroup>
