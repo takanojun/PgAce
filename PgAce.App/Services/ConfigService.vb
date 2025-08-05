@@ -20,11 +20,26 @@ Namespace PgAce.App.Services
             If cfg Is Nothing Then
                 Return New ConfigRoot()
             End If
+            For Each profile In cfg.Profiles
+                profile.Password = EncryptionService.Unprotect(profile.Password)
+            Next
             Return cfg
         End Function
 
         Public Sub Save(config As ConfigRoot)
-            Dim json = JsonConvert.SerializeObject(config, Formatting.Indented)
+            Dim clone = JsonConvert.DeserializeObject(Of ConfigRoot)(JsonConvert.SerializeObject(config))
+
+            If clone.Settings.SavePassword Then
+                For Each profile In clone.Profiles
+                    profile.Password = EncryptionService.Protect(profile.Password)
+                Next
+            Else
+                For Each profile In clone.Profiles
+                    profile.Password = String.Empty
+                Next
+            End If
+
+            Dim json = JsonConvert.SerializeObject(clone, Formatting.Indented)
             File.WriteAllText(_path, json)
         End Sub
     End Class
