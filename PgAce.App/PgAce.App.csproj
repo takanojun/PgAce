@@ -9,5 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Npgsql" Version="4.1.0" />
+    <PackageReference Include="DockPanelSuite" Version="3.0.4" />
+    <PackageReference Include="ScintillaNET" Version="3.6.3" />
   </ItemGroup>
 </Project>
