@@ -1,3 +1,4 @@
+using System.Data;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -12,6 +13,11 @@ namespace PgAce.App.Views
             Text = "Result";
             _grid = new DataGridView { Dock = DockStyle.Fill, ReadOnly = true };
             Controls.Add(_grid);
+        }
+
+        public void SetResults(DataTable table)
+        {
+            _grid.DataSource = table;
         }
     }
 }
